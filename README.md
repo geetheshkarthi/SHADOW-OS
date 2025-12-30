@@ -82,4 +82,66 @@ Most career platforms provide static suggestions and generic learning paths. Sha
 ---
 
 ## 🏗 System Architecture
+![Architecture Diagram](Architecture.jpeg)
+
+---
+
+## 🔄 Process Flow
+![Process Flow Diagram](Process_flow.jpeg)
+
+
+---
+
+### 📁 Folder Description
+
+- **Images/** – Contains UI screenshots and system architecture diagrams used in documentation and presentations.  
+- **agents/** – Houses all AI agents responsible for resume parsing, skill assessment, gap analysis, planning, and evaluation.  
+- **core/** – Shared utilities and core logic used across the system.  
+- **data/** – Role definitions, skill mappings, and configuration data.  
+- **memory/** – Stores runtime data such as verified skills, gaps, roadmaps, and convergence scores.  
+- **ui/** – Web-based user interface built using HTML, CSS, and JavaScript.  
+- **main.py** – Starts the application and initializes the system workflow.  
+- **orchestrator.py** – Manages the execution sequence of all AI agents.  
+- **server.py** – Handles backend API requests and frontend communication.  
+- **requirements.txt** – Lists all required Python libraries.
+
+---
+
+### 🚀 Running the Project
+
+1. Install the required dependencies:
+
+```bash
+pip install -r requirements.txt
+```
+
+2. Start the backend server:
+```bash
+python main.py
+```
+
+3. Open the user interface in a browser:
+```bash
+http://localhost:8000/ui/index.html
+```
+
+---
+
+## ⚖ Ethical Considerations
+
+- No automated job applications  
+- No web scraping  
+- No placement guarantees  
+- No permanent user data storage  
+- Decision-support system only  
+
+---
+
+## 🏁 Conclusion
+
+Shadow OS demonstrates how **agentic AI systems** can be applied to real-world career development. By combining autonomous reasoning, adaptive planning, and explainable decisions, it moves beyond traditional recommendation engines and showcases intelligent career convergence.
+
+---
+
+⭐ **Thank you for exploring Shadow OS!**
 
