@@ -82,12 +82,12 @@ Most career platforms provide static suggestions and generic learning paths. Sha
 ---
 
 ## 🏗 System Architecture
-![Architecture Diagram](Architecture.jpeg)
+![Architecture Diagram](Images/Architecture.jpeg)
 
 ---
 
 ## 🔄 Process Flow
-![Process Flow Diagram](Process_flow.jpeg)
+![Process Flow Diagram](Images/Process_flow.jpeg)
 
 
 ---
