@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shadow OS - Web Interface</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="app.js" defer></script>
+</head>
+
+<body>
+    <div class="container">
+        <header>
+            <div class="logo">SHADOW <span>OS</span></div>
+            <div id="header-status" class="hidden">
+                <span id="user-role">...</span> &rarr; <span id="target-role" class="highlight">...</span>
+            </div>
+        </header>
+
+        <main>
+            <!-- 1. Upload Screen -->
+            <div id="upload-screen" class="screen">
+                <div class="upload-box">
+                    <h1>Resume Analysis</h1>
+                    <p>Select your goal and upload your resume.</p>
+
+                    <form id="upload-form">
+                        <div class="form-group">
+                            <select id="role-select" required>
+                                <option value="" disabled selected>Select your target role...</option>
+                                <option value="AI Engineer">AI Engineer</option>
+                                <option value="Machine Learning Engineer">Machine Learning Engineer</option>
+                                <option value="Data Scientist">Data Scientist</option>
+                                <option value="Data Analyst">Data Analyst</option>
+                                <option value="Backend Engineer">Backend Engineer</option>
+                                <option value="Full Stack Developer">Full Stack Developer</option>
+                                <option value="DevOps Engineer">DevOps Engineer</option>
+                                <option value="Software Engineer">Software Engineer</option>
+                            </select>
+                        </div>
+
+                        <p id="role-description">Select a role to see details.</p>
+
+                        <div class="form-group">
+                            <input type="file" id="resume-file" accept=".pdf,.docx,.txt" required>
+                        </div>
+
+                        <button type="submit" id="upload-btn" class="btn-primary">Analyze Resume</button>
+                    </form>
+
+                    <div id="loading-indicator" class="hidden">
+                        <div class="spinner"></div>
+                        <p>Agents are thinking...</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 2. Dashboard Screen (Hidden Initially) -->
+            <div id="dashboard-screen" class="screen hidden">
+                <!-- Sidebar -->
+                <aside class="agent-sidebar">
+                    <h3>Agent Activity</h3>
+                    <ul id="agent-timeline"></ul>
+                </aside>
+
+                <!-- Grid -->
+                <div class="dashboard-grid">
+                    <!-- Convergence Score -->
+                    <div class="card score-card">
+                        <h3>Convergence Score</h3>
+                        <div class="score-circle">
+                            <span id="score-value">0%</span>
+                            <svg viewBox="0 0 36 36" class="circular-chart">
+                                <path class="circle-bg"
+                                    d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831" />
+                                <path class="circle" id="score-ring" stroke-dasharray="0, 100"
+                                    d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831" />
+                            </svg>
+                        </div>
+                        <p class="status-text" id="system-status">System: ACTIVE</p>
+                    </div>
+
+                    <!-- Skills -->
+                    <div class="card skills-card">
+                        <h3>Verified Knowledge</h3>
+                        <div id="skills-list" class="tag-container"></div>
+                    </div>
+
+                    <!-- Gaps -->
+                    <div class="card gaps-card">
+                        <h3>Critical Gaps</h3>
+                        <table id="gaps-table">
+                            <thead>
+                                <tr>
+                                    <th>Skill</th>
+                                    <th>Severity</th>
+                                </tr>
+                            </thead>
+                            <tbody></tbody>
+                        </table>
+                    </div>
+
+                    <!-- Roadmap -->
+                    <div class="card roadmap-card">
+                        <h3>Generated Roadmap</h3>
+                        <div id="roadmap-timeline" class="timeline-container"></div>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+</body>
+
+</html>
